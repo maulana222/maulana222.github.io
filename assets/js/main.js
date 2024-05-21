@@ -114,3 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error loading project data:', error));
 });
+/*==================== fullcrenn ====================*/
+lightGallery(document.querySelector('.lightgallery-1', {
+    control: false,
+}));
+lightGallery(document.querySelector('.detail_project__img', {
+    control: false,
+}));
+lightGallery(document.getElementById('lightGallery'), {
+    exThumbImage: 'data-external-thumb-image'
+})
