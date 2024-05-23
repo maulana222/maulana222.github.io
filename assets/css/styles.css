@@ -261,7 +261,6 @@ img {
 }
 .svg_blob {
   width: 100%;
-  /* fill: var(--first-color); */
 }
 .blob {
   width: 200px;
@@ -413,7 +412,13 @@ fill: var(--body-color);
     margin-bottom: 20px;
     color: white;
   }
-
+  .title-project {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    white-space: nowrap; /* Menghindari wrapping teks */
+    overflow: hidden; /* Menyembunyikan teks yang melebihi lebar div */
+    text-overflow: scale-down; /* Mengecilkan teks jika melebihi lebar div */
+  }
   .skills_box {
     border-radius: 6px;
     padding: 20px;
@@ -427,6 +432,7 @@ fill: var(--body-color);
   }
   .skills_subtitle {
     font-size: 18px;
+    text-align: center;
     font-weight: bold;
     color: #9370DB; /* Medium Purple */
     margin-bottom: 15px;
@@ -518,11 +524,12 @@ fill: var(--body-color);
 .project-content {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(3, 2fr);
+  grid-template-columns: repeat(2, 2fr);
+  height: min-content;
 }
 .card-header a img {
   border-radius: 5px;
-  height: 100%;
+  height: 100px;
   width: 100%;
   object-fit: cover;
 }
@@ -541,10 +548,23 @@ fill: var(--body-color);
   border-radius: 5px;
   color: #252425;
   font-weight: bold;
+  position: relative;
+  /* display: flex;
+  justify-content: space-between;
+  flex-direction: column; */
 }
 .card-body {
-  padding: 15px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: column;
 }
+.card-body p {
+  font-size: small;
+}
+
+
 /*==================== TESTIMONIAL ====================*/
 
 
@@ -560,12 +580,12 @@ fill: var(--body-color);
     margin: 30px 0;
   }
   .contact_content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: minmax(max-content, 1fr);
   }
   .contact_form {
-    width: 45%;
+    /* width: 100%; */
   }
   .contact_form_input {
     display: flex;
@@ -586,8 +606,7 @@ fill: var(--body-color);
     cursor: pointer;
   }
   .contact_social {
-    width: 45%;
-    /* align-items: center; */
+   
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -880,6 +899,11 @@ fill: var(--body-color);
     right: -56px;
     z-index: -2;
   
+  }
+  .project-content {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 2fr);
   }
   
   @keyframes rotateBall {
