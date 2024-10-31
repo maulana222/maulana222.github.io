@@ -520,12 +520,12 @@ fill: var(--body-color);
 }
 .project-header  {
   text-align: center;
+  margin-bottom: 20px;
 }
 .project-content {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(2, 2fr);
-  height: min-content;
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
 }
 .card-header a img {
   border-radius: 5px;
@@ -928,6 +928,7 @@ fill: var(--body-color);
 .detail_project {
   background-color: #ffffff;
   padding: 50px 0 50px 0 ;
+  margin-top: 50px;
 }
 .detail_project__content {
   display: grid;
@@ -950,7 +951,7 @@ fill: var(--body-color);
   /* Tambahkan gaya tambahan untuk bagian detail proyek jika diperlukan */
 }
 .description {
-  margin: 20px;
+  /* margin: 20px; */
 }
 .project_image img {
   width: 100%;
@@ -1025,4 +1026,73 @@ fill: var(--body-color);
 }
 .t-center {
   text-align: center;
+}
+
+
+.project-container {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 40px;
+  
+}
+
+.project-content {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+}
+
+.card {
+  min-width: calc(33.33% - 40px);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+.card-header img {
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.title-project {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-button {
+  left: 0;
+}
+
+.next-button {
+  right: 0;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.w-100 {
+  width: 100%;
 }
